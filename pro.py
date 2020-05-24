@@ -8,10 +8,10 @@ train , test = dataset
 X_train , y_train = train
 X_test , y_test = test
 #img1 = X_train[7]
-import cv2
+#import cv2
 #import matplotlib.pyplot as plt
 #plt.imshow(img1 , cmap='gray')
-img1_1d = img1.reshape(28*28)
+#img1_1d = img1.reshape(28*28)
 X_train_1d = X_train.reshape(-1 , 28*28)
 X_test_1d = X_test.reshape(-1 , 28*28)
 X_train = X_train_1d.astype('float32')
@@ -34,4 +34,4 @@ model.compile(optimizer=RMSprop(), loss='categorical_crossentropy',
      )
 h = model.fit(X_train, y_train_cat, epochs=10)
 scores = model.evaluate(X_test, y_test_cat, verbose=0)
-print(scores[1]*100)
+print(f"Accuracy : {scores[1]*100}" , file = open("output.txt","a"))
