@@ -37,4 +37,5 @@ model.compile(optimizer=RMSprop(), loss='categorical_crossentropy',
 h = model.fit(X_train, y_train_cat, epochs=10)
 scores = model.evaluate(X_test, y_test_cat, verbose=0)
 print(scores[1]*100 , file = open("/home/cnn/output.txt","a"))
-
+if scores[1]*100>=90:
+         model.save("/home/cnn/mnist.h5")
