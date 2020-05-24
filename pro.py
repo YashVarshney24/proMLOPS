@@ -34,4 +34,4 @@ model.compile(optimizer=RMSprop(), loss='categorical_crossentropy',
      )
 h = model.fit(X_train, y_train_cat, epochs=10)
 scores = model.evaluate(X_test, y_test_cat, verbose=0)
-print(f"Accuracy : {scores[1]*100}" , file = open("/home/cnn/output.txt","a"))
+print({scores[1]*100} , file = open("/home/cnn/output.txt","a"))
