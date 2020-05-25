@@ -34,7 +34,7 @@ from keras.optimizers import RMSprop
 model.compile(optimizer=RMSprop(), loss='categorical_crossentropy', 
          metrics=['accuracy']
          )
-h = model.fit(X_train, y_train_cat, epochs=10)
+h = model.fit(X_train, y_train_cat, epochs=3)
 scores = model.evaluate(X_test, y_test_cat, verbose=0)
 print(scores[1]*100 , file = open("/home/cnn/output1.txt","a"))
 if scores[1]*100>=90:
